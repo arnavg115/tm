@@ -44,19 +44,16 @@ def topic_modeling(q: query):
     else:
         corpus = q.body
     # return corpus
-    embeddings = q.embeddings
-    if q.embeddings is None:
-        done = False
-        j = 0
-        while j < 5 and not done:
-            embeddings = get_embeddings(corpus, config["HF"])
-            j += 1
-            done = type(embeddings) is np.ndarray
-            time.sleep(1)
-        if not done:
-            raise HTTPException(500, "Embeddings not loaded")
-    else:
-        embeddings = np.array(q.embeddings)
+
+    done = False
+    j = 0
+    while j < 5 and not done:
+        embeddings = get_embeddings(corpus, config["HF"])
+        j += 1
+        done = type(embeddings) is np.ndarray
+        time.sleep(1)
+    if not done:
+        raise HTTPException(500, "Embeddings not loaded")
 
     red = dim_reduc(embeddings)
     clustered = clustering(red)
