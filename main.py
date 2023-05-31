@@ -61,5 +61,5 @@ def topic_modeling(q: query):
         sentences = ".".join(np.array(corpus)[clustered == cluster])
         labs = np.array(q.body)[clustered == cluster]
         describers = find_describer(sentences).tolist()
-        out.append({"labels": labs, "describers": describers})
+        out.append({"body": labs, "describers": describers})
     return out
