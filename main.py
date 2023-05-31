@@ -1,4 +1,4 @@
-from typing import List, Union
+from typing import List, Union, Dict
 from utils import get_embeddings, dim_reduc, clustering, find_describer, parser
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
@@ -17,7 +17,7 @@ merge = {"default_def": "[term] means [definition]."}
 
 
 class query(BaseModel):
-    body: Union[List[List[str]], List[dict[str, str]]]
+    body: Union[List[List[str]], List[Dict[str, str]]]
     labels: Union[List[str], None] = [""]
     merge_str: Union[str, None] = "default_def"
     parse: bool = False
