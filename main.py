@@ -1,5 +1,5 @@
 from typing import List, Union
-from utils import get_embeddings, dim_reduc, clustering, find_describer
+from utils import get_embeddings, dim_reduc, clustering, find_describer, parser
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import os
@@ -17,10 +17,11 @@ merge = {"default_def": "[term] means [definition]."}
 
 
 class query(BaseModel):
-    body: Union[List[List[str]], List[str]]
+    body: Union[List[List[str]], List[dict[str, str]]]
     labels: Union[List[str], None] = [""]
     merge_str: Union[str, None] = "default_def"
-    embeddings: Union[List[List[float]], None] = None
+    parse: bool = False
+    model: str = "sentence-transformers/all-distilroberta-v1"
 
 
 @app.get("/")
@@ -31,8 +32,11 @@ def read_root():
 @app.post("/api/v1/tms")
 def topic_modeling(q: query):
     corpus = []
+    body = q.body
+    if q.parse:
+        body = parser(q.body, q.labels)
     if len(q.labels) > 1:
-        for qy in q.body:
+        for qy in body:
             st = merge[q.merge_str] if q.merge_str in merge.keys() else q.merge_str
             for i, label in enumerate(q.labels):
                 st = st.replace(f"[{label}]", qy[i])
