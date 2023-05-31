@@ -45,7 +45,7 @@ def topic_modeling(q: query):
         done = False
         j = 0
         while j < 5 and not done:
-            embeddings = get_embeddings(corpus, config["HF_KEY"])
+            embeddings = get_embeddings(corpus, config["HF"])
             j += 1
             done = type(embeddings) is np.ndarray
             time.sleep(1)
