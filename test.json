@@ -1,0 +1,245 @@
+{
+    "body": [
+       [
+          "Catergorical data",
+          "data falls into groups or categories. Ex: Favorite car, hair color, etc."
+       ],
+       [
+          "Display categorical data",
+          "bar chart, pie chart"
+       ],
+       [
+          "Quantitative Data",
+          "Data that takes on numerical values (makes sense to average) Ex: height, weight, time, etc."
+       ],
+       [
+          "Display Quantitative Data",
+          "Histogram, Dotplot, Boxplot, Stemplot"
+       ],
+       [
+          "Marginal Distribution",
+          "in a contingency table, the distribution of ONE of the variables alone. (Always out of the total sample)"
+       ],
+       [
+          "conditional distribution",
+          "describes the values of that variable among individuals who have a specific value of another variable. (Always out of a subgroup of the total sample)"
+       ],
+       [
+          "SOCS",
+          "shape, outliers, center, spread AND add context!"
+       ],
+       [
+          "Comparing Distributions",
+          "Address: Shape, Outliers, Center, Spread in context!YOU MUST USE comparison phrases like is greaterthan or is less than for Center & Spread"
+       ],
+       [
+          "Outlier Rule",
+          "Upper Bound = Q3 + 1.5(IQR)Lower Bound = Q1 - 1.5(IQR)"
+       ],
+       [
+          "Interpret Standard Deviation",
+          "Measures spread by giving the typical or average distance that the observations (context) are away from their (context) mean"
+       ],
+       [
+          "How does shape affect measures of center?",
+          "In general,Skewed Left (Mean < Median)Skewed Right (Mean > Median)Fairly Symmetric (Mean ≈ Median)"
+       ],
+       [
+          "Percentile",
+          "The percentage of data points that lie at or below the value of interest."
+       ],
+       [
+          "z-score formula",
+          "z = (x - μ)/σ"
+       ],
+       [
+          "z-score interpretation",
+          "The z-score represents the number of standard deviations above/below the mean that a particular point lies within a distribution."
+       ],
+       [
+          "linear transformation",
+          "when you multiply, divide, add, or subtract a constant from each score in a distribution.Shape - Stays the same!Center - Impacted by all operations (+, -, x, /)Spread - Impacted by only x & /)"
+       ],
+       [
+          "standard normal distribution",
+          "A normal distribution of z-scores with a mean of 0 and a standard deviation of 1."
+       ],
+       [
+          "normalcdf",
+          "Calculator command to find the area under a normal curve, given the following values:normalcdf(lower bound, upper bound, mean, standard deviation)"
+       ],
+       [
+          "invNorm",
+          "Calculstor command to find the value corresponding to a given area to the left of that value, given the following values:invNorm(area to the left, mean, standard deviation)"
+       ],
+       [
+          "SRS (Simple Random Sample)",
+          "all individuals in population have equal chance of being selected, and every group has equal chance of being selected"
+       ],
+       [
+          "Sampling Techniques",
+          "1. SRS2. Stratified3. Cluster4. Census5. Convenience6. Voluntary Response7. Systematic"
+       ],
+       [
+          "stratified random sample",
+          "a sampling design in which the population is divided into several subpopulations, and random samples are then drawn from each stratum. (SOME from ALL)"
+       ],
+       [
+          "Cluster Random Sample",
+          "Divide the population into a large number of clusters. Randomly select a certain number of clusters and sample ALL subjects in each cluster. (ALL from SOME)"
+       ],
+       [
+          "Census",
+          "An attempt to contact/sample all members of the population."
+       ],
+       [
+          "convenience sample",
+          "only members of the population who are easily accessible are selected"
+       ],
+       [
+          "voluntary response sample",
+          "People decide whether to join a sample based on an open invitation (Ex: on-line polls, telephone calls, etc.)"
+       ],
+       [
+          "Advantage of stratified random sampling",
+          "Stratified random sampling guarantees that each of the strata will be represented. It will produce less variable/more precise information than an SRS of the same size."
+       ],
+       [
+          "Bias",
+          "A sampling method is bias if it consistently produces estimates that are too small or too large."
+       ],
+       [
+          "experiment",
+          "A research method in which an investigator imposes a treatment upon the experimental units."
+       ],
+       [
+          "observational study",
+          "observes individuals and measures variables of interest but does not attempt to influence the responses or impose a treatment."
+       ],
+       [
+          "Experiment vs. Observational Study",
+          "An experiment can conclude a cause-and-effect relationship between explanatory and response variables.An observational study can only conclude an association between explanatory and response variables."
+       ],
+       [
+          "confounding variable",
+          "two variables are confounded if it cannot be determined which variable is causing the change in the response variable."
+       ],
+       [
+          "control group",
+          "the group that does not receive the experimental treatment. An experiment DOES need comparison, but DOES NOT need a control group in order to compare."
+       ],
+       [
+          "Blinding",
+          "a technique where the subjects do not know whether they are receiving a treatment or a placebo.If both the subject and the people interacting with the subject don't know which treatment is being received/given, then the study is double blind."
+       ],
+       [
+          "Experimental Designs",
+          "1. Completely Randomized Design.2. Randomized Block Design.3. Matched Pairs"
+       ],
+       [
+          "completely randomized design",
+          "all experimental units have an equal chance of receiving any treatment"
+       ],
+       [
+          "randomized block design",
+          "Start by forming blocks consisting of individuals that are similar in some way that is important to the response. Random assignment of treatments is then carried out separately within each block."
+       ],
+       [
+          "matched pairs design",
+          "The design of a study where experimental units are naturally paired by a common characteristic, or with themselves in a before-after type of study."
+       ],
+       [
+          "Benefit of Blocking",
+          "Blocking helps account for the variability in the response variable (context) that is caused by the blocking variable (context)."
+       ],
+       [
+          "scope of inference",
+          "1. We can generalize our inference to the entire population when individuals are randomly selected.2. Inferences about cause and effect are possible when an experiment is performed."
+       ],
+       [
+          "DUFS",
+          "direction, unusual features, form, strength"
+       ],
+       [
+          "influential point",
+          "An extreme value whose removal would drastically change the LSRL, correlation and/or coefficient of determination"
+       ],
+       [
+          "linear regression",
+          "A method of finding the best model for a linear relationship between the explanatory and response variable."
+       ],
+       [
+          "negative association",
+          "as x increases, y decreases"
+       ],
+       [
+          "positive association",
+          "as x increases, y increases"
+       ],
+       [
+          "correlation coefficient = 0",
+          "no LINEAR association"
+       ],
+       [
+          "Outlier",
+          "A value that lies outside (is much smaller or larger than) most of the other values in a set of data."
+       ],
+       [
+          "Scatterplot",
+          "a graphical depiction of the relationship between two quantitative variables"
+       ],
+       [
+          "coefficient of determination",
+          "The percent of the variation in the values of y that can be explain by the least-squares regression line of y on x."
+       ],
+       [
+          "lurking variable",
+          "a variable that is not among the explanatory or response variables in a study but that may influence the response variable"
+       ],
+       [
+          "extrapolation",
+          "Using a model to make a prediction outside the range of data used to create the model in the first place."
+       ],
+       [
+          "slope",
+          "the change in the response variable (y) for every one unit of change to the explanatory variable (x)"
+       ],
+       [
+          "y-intercept",
+          "the value of the response variable (y) when the explanatory variable (x) is 0."
+       ],
+       [
+          "Equation of a line",
+          "y = a + bx"
+       ],
+       [
+          "LSRL",
+          "a unique best-fit line that is found by making the squares of the residuals as small as possible"
+       ],
+       [
+          "y hat",
+          "predicted value of y"
+       ],
+       [
+          "residual",
+          "prediction error"
+       ],
+       [
+          "Actual Value - Predicted Value",
+          "Formula for Residual"
+       ],
+       [
+          "residual plot",
+          "a scatterplot of the regression residuals against the explanatory variable"
+       ],
+       [
+          "standard deviation of residuals",
+          "This value gives the approximate size of a typical or average prediction error (residual)."
+       ]
+    ],
+    "labels": [
+       "term",
+       "definition"
+    ],
+    "merge_str": "default_def"
+ }
