@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Union
 from utils import get_embeddings, dim_reduc, clustering, find_describer
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
@@ -17,10 +17,10 @@ merge = {"default_def": "[term] means [definition]."}
 
 
 class query(BaseModel):
-    body: List[List[str]] | List[str]
-    labels: List[str] | None = [""]
-    merge_str: str | None = "default_def"
-    embeddings: List[List[float]] | None = None
+    body: Union[List[List[str]], List[str]]
+    labels: Union[List[str], None] = [""]
+    merge_str: Union[str, None] = "default_def"
+    embeddings: Union[List[List[float]], None] = None
 
 
 @app.get("/")
@@ -51,6 +51,8 @@ def topic_modeling(q: query):
             time.sleep(1)
         if not done:
             raise HTTPException(500, "Embeddings not loaded")
+    else:
+        embeddings = np.array(q.embeddings)
 
     red = dim_reduc(embeddings)
     clustered = clustering(red)
