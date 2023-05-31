@@ -71,11 +71,5 @@ def find_describer(text: str):
     return vocab[np.argsort(np.mean(out, axis=0)[0])[0, -10:]][0]
 
 
-def parser(dct: List[Dict[str, str]], labels: List[str]):
-    ot = []
-    for i in dct:
-        k = []
-        for label in labels:
-            k.append(i[label])
-        ot.append(k)
-    return ot
+def parser(dct: List[Dict[str, str]]):
+    return [list(i.values()) for i in dct]

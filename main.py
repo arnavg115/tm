@@ -34,7 +34,7 @@ def topic_modeling(q: query):
     corpus = []
     body = q.body
     if q.parse:
-        body = parser(q.body, q.labels)
+        body = parser(q.body)
     if len(q.labels) > 1:
         for qy in body:
             st = merge[q.merge_str] if q.merge_str in merge.keys() else q.merge_str
