@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Dict
 import requests
 import json
 from scipy.spatial import distance
@@ -71,7 +71,7 @@ def find_describer(text: str):
     return vocab[np.argsort(np.mean(out, axis=0)[0])[0, -10:]][0]
 
 
-def parser(dct: List[dict[str, str]], labels: List[str]):
+def parser(dct: List[Dict[str, str]], labels: List[str]):
     ot = []
     for i in dct:
         k = []
