@@ -22,6 +22,7 @@ class query(BaseModel):
     merge_str: Union[str, None] = "default_def"
     parse: bool = False
     model: str = "sentence-transformers/all-distilroberta-v1"
+    describers: bool = False
 
 
 @app.get("/")
@@ -48,7 +49,7 @@ def topic_modeling(q: query):
     done = False
     j = 0
     while j < 5 and not done:
-        embeddings = get_embeddings(corpus, config["HF"])
+        embeddings = get_embeddings(corpus, config["HF"], model=q.model)
         j += 1
         done = type(embeddings) is np.ndarray
         time.sleep(1)
@@ -60,7 +61,10 @@ def topic_modeling(q: query):
     out = []
     for cluster in np.unique(clustered):
         sentences = ".".join(np.array(corpus)[clustered == cluster])
-        labs = np.array(q.body)[clustered == cluster]
-        describers = find_describer(sentences).tolist()
-        out.append({"body": labs, "describers": describers})
+        labs = np.array(body)[clustered == cluster]
+        if q.describers:
+            describers = find_describer(sentences).tolist()
+            out.append({"body": labs, "describers": describers})
+        else:
+            out.append({"body": labs})
     return out

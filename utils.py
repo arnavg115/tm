@@ -24,20 +24,20 @@ def get_embeddings(
         )
     )
     headers = {"Authorization": f"Bearer {hf_key}"}
-    data = json.dumps({"inputs": docs})
+    data = json.dumps({"inputs": docs, "options": {"wait_for_model": True}})
     out = requests.post(API_URL, data=data, headers=headers).json()
     return np.array(out)
 
 
 def dim_reduc(embeddings: np.ndarray):
     # print(embeddings.shape)
-    model = TSNE(perplexity=1, early_exaggeration=2)
+    model = TSNE(perplexity=2, early_exaggeration=2)
     reduc = model.fit_transform(embeddings)
     return reduc
 
 
 def clustering(data: np.ndarray):
-    clusterer = OPTICS(min_samples=2)
+    clusterer = OPTICS(min_samples=3)
     labels = clusterer.fit_predict(data)
     return np.array(labels)
 
